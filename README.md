@@ -20,6 +20,9 @@ SELECT “products”.“description” , “warehouse”.“warehouse” FROM �
 JOIN “warehouse_product” ON “products”.“id” = “warehouse_product”.“product_id” JOIN “warehouse”
 ON “warehouse”.“id” = “warehouse_product”.“warehouse_id” WHERE “products”.“description” = ‘diet pepsi’  ;
 
+--5.
+SELECT "customers".*, count("orders"."id") FROM "customers" JOIN "addresses" ON "customers"."id" = "addresses"."customer_id" JOIN "orders" ON "addresses"."id" = "orders"."address_id" GROUP BY "customers"."id";
+
 --6.
 SELECT COUNT(*) FROM "customers";
 
